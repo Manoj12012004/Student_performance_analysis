@@ -1,0 +1,42 @@
+.button {
+    align-items: center;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    height: 44px;
+    justify-content: center;
+    padding: 14px 20px;
+    position: relative;
+    width: 476px;
+  }
+  
+  .button .label {
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: -0.5px;
+    margin-top: -2.5px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .button.primary {
+    background-color: #043873;
+  }
+  
+  .button.secondary {
+    background-color: var(--white);
+    border: 1px solid;
+    border-color: #4e4e4e;
+  }
+  
+  .button.primary .label {
+    color: var(--grey-light);
+  }
+  
+  .button.secondary .label {
+    color: #4e4e4e;
+  }

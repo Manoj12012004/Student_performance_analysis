@@ -1,0 +1,91 @@
+body {
+    background-color: #f8f9fa;
+    margin-top: 10px;
+}
+
+.carousel-item img {
+    height: 200px;
+    object-fit: cover;
+    /* margin-bottom: 287px; */
+}
+
+.bg-primary {
+    background-color: #004080 !important;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.form-control {
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.btn-primary {
+    background-color: #004080;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #003060;
+}
+
+.list-unstyled li {
+    margin-bottom: 5px;
+}
+
+.signup .heading{
+    background-color: white;
+    border-radius: 16px;
+    color: #043873;
+    margin-bottom: 100px;
+    /* width: 120%; */
+    font-weight:400;
+    color: #043873;
+    margin-top:0px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 58px;
+}
+
+.subheading{
+    color: #FFF;
+
+font-family: Outfit;
+font-size: 35px;
+font-style: normal;
+font-weight: 600;
+line-height: 58px;
+margin-bottom: 24px;
+}
+
+.para{
+    margin-bottom: 139px;
+}
+
+h4{
+    font-weight: bold;
+}
+
+.password-criteria {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.password-criteria span {
+    width: 50%;
+    margin-bottom: 2px;
+   
+}
+
+h2{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+.star{
+    color: red;
+}

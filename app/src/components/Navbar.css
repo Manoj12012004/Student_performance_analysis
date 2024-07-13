@@ -1,0 +1,46 @@
+#nav{
+    background-color: #043873;
+    padding: 2%;
+}
+.Name{
+    font-size: 150%;
+    font-weight: 700;
+    text-align: left;
+    color: #FFFF;
+}
+.Btn-Login{
+    width: 10%;
+    background: #FFE492;
+    border-radius: 2rem;
+}
+.Btn-Login .login{
+    width: 10%;
+    font-weight: 500;
+    font-size: 140%;
+
+    color: #043873;
+}
+.Btn-Free{
+    width: 10%;
+    background: #4F9CF9;
+    border-radius: 2rem;
+}
+.Btn-Free p{
+    font-weight: 500;
+    font-size: 150%;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0;
+}
+.Btn-Free svg{
+    left: 50%;
+}
+
+
+
+
+
+
+
+
+

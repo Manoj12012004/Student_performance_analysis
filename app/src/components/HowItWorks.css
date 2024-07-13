@@ -1,0 +1,43 @@
+
+.content .heading {
+  color: #212529;
+  margin-bottom: 4%;
+  font-size: 350%; /* Adjusted font size for heading */
+  font-weight: bold; /* Set font weight to bold */
+  text-align: left; /* Align text to the left */
+  letter-spacing: -2%;
+  font-weight: 700;
+}
+
+
+.description {
+  text-align: left; /* Align text to the left */
+}
+
+.description p {
+  margin: 0; /* Remove all margins */
+  padding: 0; /* Remove all padding */
+}
+
+.how-it-works .description {
+  color: #212529;
+}
+
+.how-it-works .data-collection-we {
+  font-weight: 800;
+  font-size: 200%;
+  line-height: 120%;
+  letter-spacing: -2%;
+}
+
+.how-it-works .text-wrapper-2 {
+  font-weight: 600;
+  font-size: 150%;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -2%;
+}
+.how-it-works .div {
+  color: #ffffff;
+  white-space: nowrap;
+}

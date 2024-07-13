@@ -1,0 +1,50 @@
+.Hero{
+    background: #043873;
+    padding: 5%;
+}
+.Background{
+    position: absolute;
+    opacity: 0.5;
+}
+.block{
+    padding: 0px;
+}
+.Heading{
+    padding: 0px;
+}
+.Heading .text .head{
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 400%;
+    letter-spacing: -2%;
+    color: #FFFFFF;
+}
+.Heading .text .desc{
+    font-size: 120%;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+.Heading .Btn-free-trial{
+    background: #4F9CF9;
+    border-radius: 8px;
+}
+.Btn-free-trial p{
+    padding: 2%;
+    font-size: 120%;
+    letter-spacing: -2%;
+    color: #FFFFFF;
+    margin: 0;
+}
+.thesis{
+    z-index: 1;
+}
+.Character{
+    position: absolute;
+    z-index: 1;
+}
+.Books{
+    position: absolute;
+}
+.graduation{
+    position: absolute;
+}

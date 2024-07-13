@@ -1,0 +1,86 @@
+@import url('./variables.css');
+
+.form-container {
+  width: 1440px;
+  height: 1956px;
+  background-color: var(--secondary-color);
+  padding: 40px; /* Adjust padding as needed */
+}
+
+.register {
+  background-color: var(--secondary-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 40px; /* Adjust padding as needed */
+}
+
+.text-wrapper-4 {
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--primary-color);
+}
+
+.p {
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-small);
+  color: var(--primary-color);
+}
+
+.form-group-custom {
+  margin-bottom: 25px; /* Gap between form groups */
+  position: relative; /* Ensure label is positioned relative to its container */
+}
+
+.form-group-custom .form-label {
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-regular);
+  color: var(--primary-color);
+  position: absolute; /* Position label absolutely */
+  top: 0; /* Align at the top */
+  left: 10px; /* Small gap on the left side */
+  transform: translateY(-50%); /* Adjust vertical alignment if needed */
+}
+
+.form-group-custom .form-label::before {
+  content: ''; /* Create a pseudo-element */
+  position: absolute; /* Position it absolutely */
+  top: 50%; /* Align vertically */
+  left: -10px; /* Adjust for cutting effect */
+  width: 10px; /* Width of the cutting line */
+  height: 100%; /* Full height */
+  background-color: var(--primary-color); /* Color of the cutting line */
+  transform: translateY(-50%); /* Adjust for vertical alignment */
+}
+
+.form-group-custom .form-control {
+  border-radius: var(--border-radius);
+  border: 2px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+  padding-left: 25px; /* Adjust padding to accommodate cutting effect */
+  padding-right: 40px; /* Space for icon */
+}
+
+.input-right-section {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust for positioning of the right section */
+  transform: translateY(-50%);
+}
+
+.input-right-section img {
+  vertical-align: middle;
+}
+
+.text-wrapper-5 {
+  color: red; /* Example override for specific elements */
+}
+
+.text-wrapper-6 {
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-medium);
+  margin-top: 20px;
+  color: var(--primary-color);
+}

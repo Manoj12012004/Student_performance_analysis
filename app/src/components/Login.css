@@ -1,0 +1,20 @@
+.Login{
+    width: 100vw;
+    height: 100vh;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+}
+.Login .row{
+    min-width: 80rem;
+    max-height: 80rem;
+    margin: auto
+}
+
+.Login #rightCol{
+    padding: 10%;
+    height: 100%;
+}
+.Login #rightCol .heading{
+    height: 30%;
+}

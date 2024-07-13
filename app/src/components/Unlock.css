@@ -1,0 +1,21 @@
+.unlock {
+  background-color: #043873;
+  padding: 5%;
+}
+.unlock .unlock-insights {
+  color: #ffffff;
+  font-size: 300%;
+  font-weight: 700;
+  letter-spacing: -2%;
+  text-align: left;
+}
+.unlock .text-wrapper {
+  color: #ffffff;
+  font-size: 120%;
+  text-align: left;
+}
+
+.unlock .college-entrance {
+  max-width: 100%;
+  height: auto;
+}

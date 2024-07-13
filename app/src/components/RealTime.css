@@ -1,0 +1,77 @@
+.realtime{
+    padding: 4%;
+}
+.realtime .block{
+    margin: 4% auto;
+}
+.realtime .block .content1 h1{
+    font-weight: 700;
+    font-size: 400%;
+    text-align: left;
+    color: #212529;
+    z-index: 1;
+}
+.realtime .block .content1 .headline .text .element{
+position: absolute; 
+}
+.realtime .block .content1 .headline .text p{
+    font-weight: 400;
+    font-size: 100%;
+    color: #212529;
+    text-align: left;
+    margin: 4% 8% 4% 0;
+}
+.realtime .block .content1 .headline .Btn{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 2%;
+    background-color: #4F9CF9;
+}
+.realtime .block .content1 .headline .Btn p{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: -2%;
+    color: #FFFFFF;
+}
+.content2 .headline .text{
+    display: flex;
+    flex-direction: column;
+}
+.content2 .headline .text #linedesign{
+    position: absolute;
+}
+
+.content2 .headline .text h1{
+    z-index: 1;
+    margin: 4% ;
+    font-weight: 700;
+    font-size: 350%;
+    letter-spacing: -2%;
+    text-align: left;
+}
+.content2 .headline .text p{
+    margin: 4%;
+    font-weight: 400;
+    font-size: 100%;
+    letter-spacing: -2%;
+    color: #212529;
+    text-align: left    ;
+}
+.content2 .headline .Btn{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 3%;
+    background-color: #4F9CF9;
+}
+.content2 .headline .Btn p{
+    margin: 0;
+    font-weight: 500;
+    font-size: 150%;
+    letter-spacing: -2%;
+    color: #FFFFFF;
+}
+.content2 .headline .Btn .icon{
+    width: 10%;
+    margin: 0 0 0 3%;
+}
