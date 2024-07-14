@@ -16,7 +16,7 @@ function SignUp(){
     })
     const configuration = {
         method: "post",
-        url: "https://student-performance-analysis-2pi7.onrender.com/register",
+        url: "https://student-performance-analysis01.vercel.app/register",
         data: {
             name: user.name,
             phone: user.phone,
