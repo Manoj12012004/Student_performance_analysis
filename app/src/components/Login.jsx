@@ -21,7 +21,7 @@ function Login(){
     }
     const configuration={
         method:"post",
-        url: "http://localhost:5000/login",
+        url: "https://student-performance-analysis-2pi7.onrender.com/login",
         data:{
             email:loginUser.email,
             password:loginUser.password
