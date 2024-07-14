@@ -6,7 +6,12 @@ import dbConnect from "./db/dbConnect.js";
 import jwt from "jsonwebtoken";
 import auth from './auth.js';
 import dotenv from "dotenv"
+import { spawn } from 'child_process';
 
+const childPython=spawn('python',['./app.py'])
+childPython.on('close',(Code)=>{
+    console.log(Code)
+})
 const app=express()
 app.use(cors({
     origin: '*', // You can specify allowed origins here
