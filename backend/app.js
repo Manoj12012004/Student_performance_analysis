@@ -15,10 +15,17 @@ childPython.on('close',(Code)=>{
     console.log(Code)
 })
 const app=express()
+const allowedOrigins = ['https://student-performance-analysis-front.vercel.app'];
+
 app.use(cors({
-    origin: ['https://student-performance-analysis-front.vercel.app'], // You can specify allowed origins here
-    methods: ['GET', 'POST'],
-    credentials:true
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  optionsSuccessStatus: 200
 }));
 app.use(express.json())
 dbConnect();
