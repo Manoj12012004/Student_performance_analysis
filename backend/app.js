@@ -16,7 +16,7 @@ childPython.on('close',(Code)=>{
 })
 const app=express()
 app.use(cors({
-    origin: '*', // You can specify allowed origins here
+    origin: 'https://student-performance-analysis-front.vercel.app', // You can specify allowed origins here
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
