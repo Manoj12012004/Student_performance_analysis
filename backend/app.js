@@ -1,4 +1,4 @@
-import { hash, compare } from 'bcrypt';
+import { hash, compare } from 'bcryptjs';
 import User from "./db/userModel.js";
 import express from 'express';
 import cors from 'cors';
