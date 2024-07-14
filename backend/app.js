@@ -1,4 +1,4 @@
-import { hash, compare } from 'bcryptjs';
+import pkg from 'bcryptjs';
 import User from "./db/userModel.js";
 import express from 'express';
 import cors from 'cors';
@@ -7,6 +7,8 @@ import jwt from "jsonwebtoken";
 import auth from './auth.js';
 import dotenv from "dotenv"
 import { spawn } from 'child_process';
+
+const {hash,compare}=pkg
 
 const childPython=spawn('python',['./app.py'])
 childPython.on('close',(Code)=>{
