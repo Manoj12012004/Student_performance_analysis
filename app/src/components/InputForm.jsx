@@ -223,7 +223,7 @@ const handlePredictClick = async (e) => {
               </Row>
 
               <Button variant="primary" type="submit" className="w-100" >
-                Enter
+                {isLoading?"Loading":"Enter"}
               </Button>
             </Form>
           </Col>

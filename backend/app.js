@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import pkg from "bcryptjs";
-=======
-import pkg from 'bcryptjs';
->>>>>>> ac0a90ecb685371411202efbb186f8e90c540aad
 import User from "./db/userModel.js";
 import express from 'express';
 import cors from 'cors';
