@@ -16,7 +16,7 @@ function SignUp(){
     })
     const configuration = {
         method: "post",
-        url: "http://localhost:5000/register",
+        url: "https://student-performance-analysis-2pi7.onrender.com/register",
         data: {
             name: user.name,
             phone: user.phone,

@@ -33,7 +33,7 @@ function InputForm(){
 const handlePredictClick = async (e) => {
     e.preventDefault();
     setIsloading(true);
-    const url = "http://127.0.0.1:5000/predict";
+    const url = "https://student-performance-analysis-2pi7.onrender.com/predict";
     const formData = JSON.stringify(Input_form);
     console.log(formData)
     try {
