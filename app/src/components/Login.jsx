@@ -21,7 +21,7 @@ function Login(){
     }
     const configuration={
         method:"post",
-        url: "https://student-performance-analysis-2pi7.onrender.com/login",
+        url: "https://student-performance-analysis01.vercel.app/login",
         data:{
             email:loginUser.email,
             password:loginUser.password
