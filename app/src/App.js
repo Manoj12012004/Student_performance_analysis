@@ -23,7 +23,7 @@ function App() {
         <Route path='/register' element={<SignUp/>}></Route>
         {/* <ProtectedRoutes path='/auth' element={<AuthComponent/>}></ProtectedRoutes> */}
         <Route element={<ProtectedRoutes />}>
-          <Route path="https://student-performance-analysis-front.onrender.com/auth" element={<AuthComponent />} />
+          <Route path="/auth" element={<AuthComponent />} />
         </Route>
         <Route path='/input_form' element={<InputForm/>}></Route>
       </Routes>      
