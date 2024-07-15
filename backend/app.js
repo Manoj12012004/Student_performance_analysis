@@ -15,7 +15,7 @@ childPython.on('close',(Code)=>{
     console.log(Code)
 })
 const app=express()
-const allowedOrigins = ['https://student-performance-analysis-front.vercel.app'];
+const allowedOrigins = ['https://student-performance-analysis-front.onrender.com/','http://localhost:3000'];
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -25,7 +25,8 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  credentials: true 
 }));
 app.use(express.json())
 dbConnect();
@@ -42,6 +43,19 @@ app.use((req, res, next) => {
     );
     next();
 });
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
+  );
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+  );
+  next();
+});
+
 app.options('*', cors());
 
 
