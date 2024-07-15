@@ -5,130 +5,101 @@ import cors from 'cors';
 import dbConnect from "./db/dbConnect.js";
 import jwt from "jsonwebtoken";
 import auth from './auth.js';
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 import { spawn } from 'child_process';
 
-const {hash,compare}=pkg
+dotenv.config(); // Load environment variables at the beginning
 
-const childPython=spawn('python',['./app.py'])
-childPython.on('close',(Code)=>{
-    console.log(Code)
-})
-const app=express()
-const allowedOrigins = ['https://student-performance-analysis-front.onrender.com/','http://localhost:3000'];
+const { hash, compare } = pkg;
+
+const childPython = spawn('python', ['./app.py']);
+childPython.on('close', (code) => {
+  console.log(`Child process exited with code ${code}`);
+});
+
+const app = express();
+
+const allowedOrigins = [
+  'https://student-performance-analysis-front.onrender.com',
+  'http://localhost:3000'
+];
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
     }
   },
   optionsSuccessStatus: 200,
-  credentials: true 
+  credentials: true // Allow cookies to be sent/received
 }));
-app.use(express.json())
+
+app.use(express.json());
+
 dbConnect();
-dotenv.config()
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-    );
-    res.setHeader(
-        "Access-Control-Allow-Methods",
-        "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-    );
-    next();
-});
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-  );
-  res.header(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-  );
-  next();
+
+app.post("/register", async (request, response) => {
+  try {
+    const hashedPassword = await hash(request.body.password, 10);
+    const newUser = new User({
+      name: request.body.name,
+      phone: request.body.phone,
+      email: request.body.email,
+      password: hashedPassword,
+    });
+    const result = await newUser.save();
+    response.status(201).send({
+      message: "User created successfully",
+      result,
+    });
+  } catch (error) {
+    response.status(500).send({
+      message: "Error creating user",
+      error,
+    });
+  }
 });
 
-app.options('*', cors());
+app.post("/login", async (request, response) => {
+  try {
+    const user = await User.findOne({ email: request.body.email });
+    if (!user) {
+      return response.status(404).send({ message: "Email not found" });
+    }
+    const passwordCheck = await compare(request.body.password, user.password);
+    if (!passwordCheck) {
+      return response.status(400).send({ message: "Password does not match" });
+    }
+    const token = jwt.sign(
+      { userId: user._id, userEmail: user.email },
+      process.env.JWT_SECRET || "RANDOM-TOKEN",
+      { expiresIn: "24h" }
+    );
+    response.status(200).send({
+      message: "Login Successful",
+      email: user.email,
+      token,
+    });
+  } catch (error) {
+    response.status(400).send({
+      message: "Error during login",
+      error,
+    });
+  }
+});
 
-
-
-
-app.post("/register",async(request,response)=>{
-    hash(request.body.password,10).then((hashedPassword)=>{
-        const newUser=new User({
-            name:request.body.name,
-            phone:request.body.phone,
-            email:request.body.email,
-            password:hashedPassword,
-        })
-        newUser.save().then((result)=>{
-            response.status(201).send({
-                message:"User created successfully",
-                result,
-            })
-        }).catch((error)=>{
-            response.status(500).send({
-                message:"Error creating user",error,
-            })
-        })
-    }).catch((e)=>{
-        response.status(500).send({
-            message:"Password not hashed successfully",
-            e,
-        })
-    })
-})
-app.post("/login",async(request,respone)=>{
-    await User.findOne({email:request.body.email}).then((user)=>{
-        compare(request.body.password,user.password).then((passwordCheck)=>{
-        if(!passwordCheck){
-            return respone.status(400).send({
-                message:"Password does not match",
-                error,
-            })
-        }
-        const token=jwt.sign({
-            userId:user._id,
-            userEmail:user.email,
-        },
-        "RANDOM-TOKEN",{
-            expiresIn:"24h"
-        }   
-    )
-    respone.status(200).send({
-        message:"Login Successful",
-        email:user.email,
-        token,
-    })
-    }).catch((error)=>{
-        respone.status(400).send({
-            message:"Password does not match",error
-        })
-    })    
-   })
-   .catch((error)=>{
-    respone.status(404).send({
-        message:"Email not found",
-        error,
-    })
-   })
-})
 app.get("/free-endpoint", (request, response) => {
-    response.json({ message: "You are free to access me anytime" });
+  response.json({ message: "You are free to access me anytime" });
 });
-  
-  // authentication endpoint
-app.get("/auth-endpoint",auth, (request, response) => {
-response.json({ message: "You are authorized to access me" });
+
+// authentication endpoint
+app.get("/auth-endpoint", auth, (request, response) => {
+  response.json({ message: "You are authorized to access me" });
 });
-app.listen(process.env.PORT,()=>{
-    console.log(`${process.env.PORT} is running`)
-})
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
