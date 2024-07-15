@@ -18,7 +18,7 @@ function App() {
     <Router>
     <div className="App">
       <Routes>
-        <Route path='https://student-performance-analysis-front.onrender.com/' element={<Home/>}></Route>
+        <Route path='https://student-performance-analysis-front.onrender.com' element={<Home/>}></Route>
         <Route path='https://student-performance-analysis-front.onrender.com/login' element={<Login/>}></Route>
         <Route path='https://student-performance-analysis-front.onrender.com/register' element={<SignUp/>}></Route>
         {/* <ProtectedRoutes path='/auth' element={<AuthComponent/>}></ProtectedRoutes> */}
