@@ -15,7 +15,7 @@ childPython.on('close',(Code)=>{
     console.log(Code)
 })
 const app=express()
-const allowedOrigins = ['https://student-performance-analysis-front.vercel.app','https://localhost:3000'];
+const allowedOrigins = ['https://student-performance-analysis-front.vercel.app','http://localhost:3000'];
 
 app.use(cors({
   origin: function (origin, callback) {
