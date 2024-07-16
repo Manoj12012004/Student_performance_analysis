@@ -60,11 +60,11 @@ const handlePredictClick = async (e) => {
     }
   };
   return (
-    <div className="form-container">
-      <Container fluid className="input-form">
-        <Row>
-          <Col>
-            <Navbar bg="primary" variant="dark" expand="lg" className="nav-bar">
+    <div className="form-container container-fluid" >
+      <Container fluid className="input-form" style={{width:"70%"}}>
+        <Row className='d-flex justify-content-center' style={{margin:"0"}}>
+          <Col xs={12} md={10} lg={8} style={{padding:"0"}}>
+            <Navbar bg="primary" variant="dark" expand="lg" className="nav-bar p-4" style={{borderRadius:"10px"}}>
               <Navbar.Brand href="#home">Student Performance Analysis</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
@@ -161,7 +161,7 @@ const handlePredictClick = async (e) => {
               <Row className="spaced">
                 <Col sm={12}>
                   <Form.Group className="form-group-custom">
-                    <Form.Label>Field No 2 <span className="text-wrapper-5">*</span></Form.Label>
+                    <Form.Label style={{}}>Field No 2 <span className="text-wrapper-5">*</span></Form.Label>
                     <Form.Control as="select" required name='parental_level_of_education' value={Input_form.parental_level_of_education} onChange={handleChange}>
                     <option value={""}>Select Parental Level of Education</option>
                     <option value={"some high school"}>Some High School</option>
