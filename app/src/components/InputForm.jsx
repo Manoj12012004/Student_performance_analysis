@@ -33,7 +33,7 @@ function InputForm(){
 const handlePredictClick = async (e) => {
     e.preventDefault();
     setIsloading(true);
-    const url = "https://student-performance-analysis01.vercel.app/predict";
+    const url = "https://student-performance-analysis-2pi7.onrender.com/predict";
     const formData = JSON.stringify(Input_form);
     console.log(formData)
     try {
