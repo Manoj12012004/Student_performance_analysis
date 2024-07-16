@@ -6,6 +6,6 @@ const cookies = new Cookies();
 // receives component and any other props represented by ...rest
 const ProtectedRoutes=()=>{
     const token=cookies.get("TOKEN")
-    return token? <Outlet/>: <Navigate to="/"/>
+    return token? <Outlet/>: <Navigate to="/login"/>
 }
 export default ProtectedRoutes
