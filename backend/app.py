@@ -5,7 +5,7 @@ import numpy as np
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS
-
+application=app
 # Load the model
 with open('linear_model.pkl', 'rb') as f:
     model = pickle.load(f)
