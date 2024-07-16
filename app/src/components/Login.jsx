@@ -4,13 +4,12 @@ import loginImg4 from "../components/Asessts/Login/image4.jpeg";
 import loginImg3 from "./Asessts/Login/image3.png";
 import loginImg1 from "./Asessts/Login/image1.jpeg";
 import { Link } from "react-router-dom";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import  Axios  from "axios";
 import Cookies from "universal-cookie";
 
 function Login(){
-    const history = useHistory();
     const cookies=new Cookies();
     const [loginUser,setloginUser]=useState({
         email:"",
@@ -29,6 +28,7 @@ function Login(){
             password:loginUser.password
         }
     }
+    const navigate = useNavigate();
     const handleSubmit = (e) =>{
         e.preventDefault();
         Axios(configuration).then((result)=>{
@@ -36,7 +36,7 @@ function Login(){
                 path: "/",
               });
             setLogin(true)
-            history.push('/auth');
+            navigate('/auth');
             console.log(result)}).catch((error)=>{
                 console.log(error)
             })
