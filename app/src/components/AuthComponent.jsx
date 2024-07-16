@@ -14,7 +14,7 @@ const cookies=new Cookies()
 export default function AuthComponent() {
     const navigate=useNavigate();
     const logout=()=>{
-        cookies.remove("TOKEN");
+        cookies.remove("TOKEN",{path:"/"});
          navigate("/login");
     }
     return (
