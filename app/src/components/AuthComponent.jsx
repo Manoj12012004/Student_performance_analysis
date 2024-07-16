@@ -6,15 +6,16 @@ import RealTime from "./RealTime"
 import Unlock from "./Unlock"
 import HowItWorks from "./HowItWorks"
 import Footer from "./Footer";
-
+import { useNavigate } from 'react-router-dom';
 
 const cookies=new Cookies()
 
 
 export default function AuthComponent() {
+    const navigate=usNavigate();
     const logout=()=>{
         cookies.remove("TOKEN");
-        window.location.href = "/login";
+         navigate("/login");
     }
     return (
         <div>
