@@ -17,6 +17,10 @@ export default function AuthComponent() {
         cookies.remove("TOKEN",{path:"/"});
          navigate("/login");
     }
+    const input=()=>{
+        cookies.remove("TOKEN",{path:"/"});
+         navigate("input_form");
+    }
     return (
         <div>
         <Navbar/>
@@ -26,6 +30,7 @@ export default function AuthComponent() {
         <HowItWorks/>
         <Footer/>
         <button onClick={logout}>Logout</button>
+        <button onClick={input}>Input</button>   
         </div>
   );
 }
