@@ -14,7 +14,7 @@ const cookies=new Cookies()
 export default function AuthComponent() {
     const navigate=useNavigate();
     const logout=()=>{
-        cookies.remove("TOKEN",{path:"/"});
+        cookies.remove("TOKEN");
          navigate("/login");
     }
     const input=()=>{
@@ -22,14 +22,13 @@ export default function AuthComponent() {
     }
     return (
         <div>
-        <Navbar/>
+        <Navbar props={"input_form"}/>
         <Hero/>
         <RealTime/>
         <Unlock/>
         <HowItWorks/>
         <Footer/>
-        <button onClick={logout}>Logout</button>
-        <button onClick={input}>Input</button>   
+        <button onClick={logout}>Logout</button>  
         </div>
   );
 }
