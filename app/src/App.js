@@ -25,7 +25,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route path="/auth" element={<AuthComponent />} />
         </Route>
-        <Route path='/input_form' element={<InputForm/>}></Route>
+        <Route path='/auth/input_form' element={<InputForm/>}></Route>
       </Routes>      
     </div>
     </Router>
