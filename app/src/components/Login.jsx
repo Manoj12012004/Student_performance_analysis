@@ -36,7 +36,7 @@ function Login(){
                 path: "/",
               });
             setLogin(true)
-            history.push('/dashboard');
+            history.push('/auth');
             console.log(result)}).catch((error)=>{
                 console.log(error)
             })
