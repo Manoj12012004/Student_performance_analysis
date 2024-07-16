@@ -4,11 +4,13 @@ import loginImg4 from "../components/Asessts/Login/image4.jpeg";
 import loginImg3 from "./Asessts/Login/image3.png";
 import loginImg1 from "./Asessts/Login/image1.jpeg";
 import { Link } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import { useState } from "react";
 import  Axios  from "axios";
 import Cookies from "universal-cookie";
 
 function Login(){
+    const history = useHistory();
     const cookies=new Cookies();
     const [loginUser,setloginUser]=useState({
         email:"",
@@ -33,8 +35,8 @@ function Login(){
             cookies.set("TOKEN", result.data.token, {
                 path: "/",
               });
-            window.location.href = "/auth";
             setLogin(true)
+            history.push('/dashboard');
             console.log(result)}).catch((error)=>{
                 console.log(error)
             })
