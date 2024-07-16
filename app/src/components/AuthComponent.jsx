@@ -18,7 +18,6 @@ export default function AuthComponent() {
          navigate("/login");
     }
     const input=()=>{
-        cookies.remove("TOKEN",{path:"/"});
          navigate("input_form");
     }
     return (
