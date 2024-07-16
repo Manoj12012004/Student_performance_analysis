@@ -9,9 +9,7 @@ CORS(app)  # Enable CORS
 # Load the model
 with open('linear_model.pkl', 'rb') as f:
     model = pickle.load(f)
-@app.route('/predict', methods=['GET'])
-def home():
-    return "hi"# Mapping of categorical features to numerical values
+# Mapping of categorical features to numerical values
 gender_mapping = {'male': 0, 'female': 1}
 race_ethnicity_mapping = {
     'group A': 0,
