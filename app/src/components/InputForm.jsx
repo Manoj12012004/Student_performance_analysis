@@ -47,7 +47,7 @@ const handlePredictClick = async (e) => {
       });
       const data = await response.json();
       if (response.ok) {
-        console.log()
+        console.log("hi")
         setResult(`Predicted Score: ${data.prediction}`);
         setshowR(true);
       } else {
