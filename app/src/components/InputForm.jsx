@@ -236,7 +236,7 @@ const handlePredictClick = async (e) => {
         <Row>
           <Col className="text-center mt-4">
             <div className="text-wrapper-6">Student Performance Analysis Form</div>
-            <div>{showR?<Result show={resShow} onHide={() => setresShow(false)} res={result}/>:""}</div>
+            <div>{showR?result:""}</div>
           </Col>
         </Row>
       </Container>
