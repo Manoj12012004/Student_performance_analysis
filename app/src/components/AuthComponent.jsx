@@ -1,6 +1,6 @@
 import React from "react";
 import Cookies from "universal-cookie";
-import Navbar from "./Navbar";
+import Navbar1 from "./Navbar";
 import Hero from "./Hero";
 import RealTime from "./RealTime"
 import Unlock from "./Unlock"
