@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { Container, Modal } from "react-bootstrap";
 import { useState } from "react";
@@ -9,11 +9,12 @@ const cookies = new Cookies();
 
 
 function Navbar1({props}){
+    const nav=useNavigate();
     const link=`${props}`
     const token=cookies.get("TOKEN")
     const logout=()=>{
         cookies.remove("TOKEN");
-        window.location.href = "/login";
+        nav("/login");
     }
     const [show,setShow]=useState(false)
     const handleClose = () => setShow(false);
