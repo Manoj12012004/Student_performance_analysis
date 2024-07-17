@@ -4,7 +4,6 @@ import loginImg4 from "../components/Asessts/Login/image4.jpeg";
 import loginImg3 from "./Asessts/Login/image3.png";
 import loginImg1 from "./Asessts/Login/image1.jpeg";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import  Axios  from "axios";
 import Cookies from "universal-cookie";
@@ -26,17 +25,16 @@ function Login(){
         data:{
             email:loginUser.email,
             password:loginUser.password
-        }
+        },
     }
-    const navigate = useNavigate();
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault();
-        Axios(configuration).then((result)=>{
+        await Axios(configuration).then((result)=>{
             cookies.set("TOKEN", result.data.token, {
                 path: "/",
               });
+            window.location.href = "/auth";
             setLogin(true)
-            navigate('/auth');
             console.log(result)}).catch((error)=>{
                 console.log(error)
             })
@@ -44,7 +42,7 @@ function Login(){
     return(
         <div className="Login ">
         <div className="container row">
-            <div className="col conatainer text-white bg-primary ">
+            <div className="col-md-6 col-sm-12 conatainer text-white bg-primary ">
                 <div className="container d-flex flex-column justify-content-between" id="rightCol">
                     <div className="heading container d-flex flex-column justify-content-between">
                         <h2 className=" bg-white rounded-pill p-1" style={{color:"#043873",fontSize:"1.8rem"}}>Student Performnace Analaysis</h2>
@@ -67,7 +65,7 @@ function Login(){
                     </div>
                 </div>
             </div>
-            <div className="col p-5 d-flex align-items-center">
+            <div className="col-md-6 col-sm-12 p-5 d-flex align-items-center">
                 <div className="w-100">
                     <div className="text-center mb-4">
                         <h4>Welcome Back!</h4>
@@ -77,7 +75,7 @@ function Login(){
                         {login ? (
                             <p className="text-success">You Are Logged in Successfully</p>
                             ) : (
-                            <p className="text-danger">You Are Not Logged in</p>
+                            <p className="text-danger"></p>
                         )}
                         <div className="form-group">
                             <label htmlFor="email">Email<span className="star">*</span></label>
@@ -87,7 +85,7 @@ function Login(){
                             <label htmlFor="password">Password<span className="star">*</span></label>
                             <input type="password" className="form-control" id="password" placeholder="Enter password" name="password" value={loginUser.password}  onChange={handleChange}/>
                         </div>
-                        <button type="submit" className="btn btn-primary btn-block" onClick={handleSubmit}>Login</button>
+                        <button type="submit" className="btn btn-primary btn-block p-3 m-4" onClick={handleSubmit} style={{width:"60%"}} >Login</button>
                         <div className="text-center mt-3">
                             <p>Don't have an account yet? <Link to="/register">Sign up</Link></p>
                             {/* <p>Forgot Password? <a href="#">Reset Now</a></p> */}
