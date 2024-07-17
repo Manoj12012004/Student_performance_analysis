@@ -4,7 +4,7 @@ import './InputForm.css';
 import CalendarBlank from './Asessts/Forms/CalendarBlank.svg';
 import Envelope from './Asessts/Forms/Envelope.svg';
 import CaretDown from './Asessts/Forms/CaretDown.svg';
-import Result from'./Result.jsx;
+import Result from'./Result.jsx';
 
 function InputForm(){
   const [result, setResult] = useState("");
