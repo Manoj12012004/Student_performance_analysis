@@ -4,6 +4,7 @@ import './InputForm.css';
 import CalendarBlank from './Asessts/Forms/CalendarBlank.svg';
 import Envelope from './Asessts/Forms/Envelope.svg';
 import CaretDown from './Asessts/Forms/CaretDown.svg';
+import Result from'./Result.jsx;
 
 function InputForm(){
   const [result, setResult] = useState("");
@@ -232,7 +233,7 @@ const handlePredictClick = async (e) => {
         <Row>
           <Col className="text-center mt-4">
             <div className="text-wrapper-6">Student Performance Analysis Form</div>
-            <div>{showR?result:""}</div>
+            <div>{showR?<Result name=`${result}`/>:""}</div>
           </Col>
         </Row>
       </Container>
