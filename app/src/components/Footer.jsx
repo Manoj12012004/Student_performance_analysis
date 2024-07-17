@@ -1,12 +1,15 @@
 import React from "react";
 import "./Footer.css";
+import { useNavigate } from "react-router-dom";
+
 
 function Footer(){
+  const nav=useNavigate();
   return (
     <div className="footer container-fluid d-flex justify-content-center align-items-center">
       <div className="heading d-flex justify-content-center align-items-center flex-column">
         <div className="text-block d-flex justify-content-center align-items-center flex-column text-center">
-          <p className="text-wrapper">Try Student Performance <br></br> Analysis today</p>
+          <p className="text-wrapper"><button onClick={nav("/auth/input_form")}>Try Student Performance <br></br> Analysis today</button></p>
           <p className="get-started-for-free">
             Get started for free. <br />
             Add your whole team as your needs grow.

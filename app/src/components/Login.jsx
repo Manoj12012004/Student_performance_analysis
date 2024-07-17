@@ -7,8 +7,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import  Axios  from "axios";
 import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 
 function Login(){
+    const nav = useNavigate();
     const cookies=new Cookies();
     const [loginUser,setloginUser]=useState({
         email:"",
@@ -33,7 +35,7 @@ function Login(){
             cookies.set("TOKEN", result.data.token, {
                 path: "/",
               });
-            window.location.href = "/auth";
+            nav("/auth");
             setLogin(true)
             console.log(result)}).catch((error)=>{
                 console.log(error)
