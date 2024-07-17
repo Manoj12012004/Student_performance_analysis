@@ -10,7 +10,7 @@ function Home(){
     return(
         <>
         <div className="container-fluid">
-        <Navbar1 props="register"/>
+        <Navbar1 props={"register"}/>
         <Hero/>
         <RealTime/>
         <Unlock/>

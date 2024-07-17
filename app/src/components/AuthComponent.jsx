@@ -1,24 +1,21 @@
 import React from "react";
 import Cookies from "universal-cookie";
-import Navbar1 from "./Navbar";
+import Navbar from "./Navbar";
 import Hero from "./Hero";
 import RealTime from "./RealTime"
 import Unlock from "./Unlock"
 import HowItWorks from "./HowItWorks"
 import Footer from "./Footer";
-import { useNavigate } from 'react-router-dom';
+import Navbar1 from "./Navbar";
+
 
 const cookies=new Cookies()
 
 
 export default function AuthComponent() {
-    const navigate=useNavigate();
     const logout=()=>{
         cookies.remove("TOKEN");
-         navigate("/login");
-    }
-    const input=()=>{
-         navigate("input_form");
+        window.location.href = "/login";
     }
     return (
         <div>
@@ -28,7 +25,7 @@ export default function AuthComponent() {
         <Unlock/>
         <HowItWorks/>
         <Footer/>
-        <button onClick={logout}>Logout</button>  
+        <button onClick={logout}>Logout</button>
         </div>
   );
 }

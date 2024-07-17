@@ -4,7 +4,7 @@ import './InputForm.css';
 import CalendarBlank from './Asessts/Forms/CalendarBlank.svg';
 import Envelope from './Asessts/Forms/Envelope.svg';
 import CaretDown from './Asessts/Forms/CaretDown.svg';
-import Result from'./Result.jsx';
+import Result from './Result';
 
 function InputForm(){
   const [result, setResult] = useState("");
@@ -33,7 +33,7 @@ function InputForm(){
   }
 const handlePredictClick = async (e) => {
     e.preventDefault();
-    setIsloading(true);
+    
     const url = "https://student-performance-analysis-backflask.onrender.com/predict";
     const formData = JSON.stringify(Input_form);
     console.log(formData)
@@ -48,9 +48,11 @@ const handlePredictClick = async (e) => {
       });
       const data = await response.json();
       if (response.ok) {
-        console.log("hi")
+        console.log()
         setResult(`Predicted Score: ${data.prediction}`);
         setshowR(true);
+        setIsloading(true);
+        setresShow(true)
       } else {
         setResult(`Error: ${data.error}`);
       }
@@ -60,6 +62,7 @@ const handlePredictClick = async (e) => {
       setIsloading(false);
     }
   };
+  const [resShow, setresShow] =useState(false);
   return (
     <div className="form-container container-fluid" >
       <Container fluid className="input-form" style={{width:"70%"}}>
@@ -233,7 +236,7 @@ const handlePredictClick = async (e) => {
         <Row>
           <Col className="text-center mt-4">
             <div className="text-wrapper-6">Student Performance Analysis Form</div>
-            <div>{showR?<Result show={showR} onHide={() => setshowR(false)} res={result}/>:""}</div>
+            <div>{showR?<Result show={resShow} onHide={() => setresShow(false)} res={result}/>:""}</div>
           </Col>
         </Row>
       </Container>
