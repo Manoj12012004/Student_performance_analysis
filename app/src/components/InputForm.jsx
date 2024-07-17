@@ -33,7 +33,7 @@ function InputForm(){
   }
 const handlePredictClick = async (e) => {
     e.preventDefault();
-    
+    setIsloading(true);
     const url = "https://student-performance-analysis-backflask.onrender.com/predict";
     const formData = JSON.stringify(Input_form);
     console.log(formData)
@@ -51,7 +51,6 @@ const handlePredictClick = async (e) => {
         console.log()
         setResult(`Predicted Score: ${data.prediction}`);
         setshowR(true);
-        setIsloading(true);
         setresShow(true)
       } else {
         setResult(`Error: ${data.error}`);
@@ -236,7 +235,7 @@ const handlePredictClick = async (e) => {
         <Row>
           <Col className="text-center mt-4">
             <div className="text-wrapper-6">Student Performance Analysis Form</div>
-            <div>{showR?result:""}</div>
+            <div>{showR?<Result show={resShow} onHide={() => setresShow(false)} res={result}/>:""}</div>
           </Col>
         </Row>
       </Container>
