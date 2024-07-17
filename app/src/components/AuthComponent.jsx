@@ -22,7 +22,7 @@ export default function AuthComponent() {
     }
     return (
         <div>
-        <Navbar props={"input_form"}/>
+        <Navbar1 props={"input_form"}/>
         <Hero/>
         <RealTime/>
         <Unlock/>
