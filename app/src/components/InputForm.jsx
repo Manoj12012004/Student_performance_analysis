@@ -233,7 +233,7 @@ const handlePredictClick = async (e) => {
         <Row>
           <Col className="text-center mt-4">
             <div className="text-wrapper-6">Student Performance Analysis Form</div>
-            <div>{showR?<Result name=`${result}`/>:""}</div>
+            <div>{showR?<Result name={result}/>:""}</div>
           </Col>
         </Row>
       </Container>
