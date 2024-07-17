@@ -56,8 +56,8 @@ function Navbar1({props}){
                                 </Modal.Footer>
                             </Modal>
                             </div>
-                            </div>:<div className="Btn-Login btn " style={{width:"40%",margin:"auto"}}><div className="login "><Link to="/login" style={{textDecoration:"none",color:"blue",textAlign:"center",margin:"auto"}}>Login</Link></div></div>}
-                            <div className="Btn-Free btn d-flex" style={{width:"150%",gap:"1.0rem",}}><p><button  onCLick={navigate("input_form")} style={{textDecoration:"none",color:"white"}}>{props==="input_form"?"Form":"Try It for Free"}</button></p><div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </div>:<div className="Btn-Login btn " style={{width:"40%",margin:"auto"}}><div className="login "><button onClick=navigate("/login") style={{textDecoration:"none",color:"blue",textAlign:"center",margin:"auto"}}>Login</button></div></div>}
+                            <div className="Btn-Free btn d-flex" style={{width:"150%",gap:"1.0rem",}}><p><button  onCLick={navigate(`${props}`)} style={{color:"white"}}>{props==="input_form"?"Form":"Try It for Free"}</button></p><div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 8.08984H15" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M8 1.08984L15 8.08984L8 15.0898" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
