@@ -29,9 +29,9 @@ function Navbar1({props}){
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto d-flex justify-content-between" style={{margin:"auto",}} >
-                        <Nav.Link className="About" style={{fontSize:"100%",color:"white"}}>About Analysis</Nav.Link>
-                        <Nav.Link className="Test" style={{fontSize:"100%",color:"white"}}>Test Your Score</Nav.Link>
-                        <Nav.Link className="History" style={{fontSize:"100%",color:"white"}}>History</Nav.Link>
+                        <Nav.Link className="About" style={{fontSize:"100%",color:"white",margin:"auto"}}>About Analysis</Nav.Link>
+                        <Nav.Link className="Test" style={{fontSize:"100%",color:"white",margin:"auto"}}>Test Your Score</Nav.Link>
+                        <Nav.Link className="History" style={{fontSize:"100%",color:"white",margin:"auto"}}>History</Nav.Link>
                         <div className="Btns d-flex justify-content-center">
                             {token?<div className="logout d-flex justify-content-center align-items-center" >
                             <button onClick={handleShow} style={{border:"none",margin:"auto"}}>
@@ -54,16 +54,15 @@ function Navbar1({props}){
                                 </Modal.Footer>
                             </Modal>
                             </div>
-                            </div>:<div className="Btn-Login btn m-2 " style={{width:"40%",height:"50%",margin:"auto"}}><div className="login "><Link to="/login" style={{textDecoration:"none",color:"blue",textAlign:"center"}}>Login</Link></div></div>}
-                            <div className="Btn-Free btn m-2 d-flex" style={{width:"auto",gap:"1.0rem"}}><Link to={link} style={{textDecoration:"none",color:"white"}}><p>{props === "register" ? "Try this out for free" : ""}</p>
-                            {props==="register" &&(
+                            </div>:<Link to="/login" className="Btn-Login btn m-2 " style={{width:"40%",height:"50%",margin:"auto"}}><div className="login "><p style={{textDecoration:"none",color:"blue",textAlign:"center"}}>Login</p></div></Link>}
+                            {props==="register"?
+                            <Link to={link} className="Btn-Free btn m-2 d-flex" style={{width:"auto",gap:"1.0rem"}}><p style={{textDecoration:"none",color:"white"}}><p>Try this out for free</p>
                                 <div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 8.08984H15" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M8 1.08984L15 8.08984L8 15.0898" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                            </div>
-                            )}</Link>
-                            </div>
+                            </div></p>
+                            </Link>:""}
                         </div>
                     </Nav>
                 </Navbar.Collapse>

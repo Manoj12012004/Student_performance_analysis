@@ -50,9 +50,6 @@ function Hero(){
                         <h2 className="head">Student Performance Analysis Portal</h2>
                         <p className="desc text-center w-100 m-4">Welcome to the Student Performance Analysis Portal. Our comprehensive platform is designed to provide educators, students, and parents with valuable insights into academic performance. By leveraging data-driven analysis, we help you identify strengths, address weaknesses, and tailor educational strategies for optimal outcomes.</p>
                     </div>
-                    <div className="Btn-free-trial" style={{margin:"auto"}}>
-                        <p>Try Whitepace free</p>
-                    </div>
                 </div>
             <div className="thesis col-md-6 col-sm-12" >
             <svg viewBox="0 0 824 615" fill="none" xmlns="http://www.w3.org/2000/svg" style={{width:"100%"}}>

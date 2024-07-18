@@ -1,9 +1,12 @@
 import React from "react";
 import "./Footer.css";
 import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 
 
 function Footer(){
+  const cookie= new Cookies();
+  const token=cookie.get("TOKEN")
   const nav=useNavigate();
   return (
     <div className="footer container-fluid d-flex justify-content-center align-items-center">
@@ -16,7 +19,7 @@ function Footer(){
           </p>
         </div>
         <div className="btn-try d-flex align-items-center justify-content-center">
-          <button onClick={()=>{nav("/auth/input_form")}}>
+          <button onClick={()=>{token?nav("/auth/input_form"):nav("/register")}} style={{backgroundColor:"#4f9cf9",border:"none"}}>
           <div className="try-it-free">Try it&nbsp;&nbsp;free</div>
           <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.5 7.5H14.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>

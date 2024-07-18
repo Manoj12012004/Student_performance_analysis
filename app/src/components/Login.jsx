@@ -40,7 +40,7 @@ function Login(){
               });
             nav("/auth");
             setLogin(true)
-            setErr(result.message)
+            setErr(result.data.message)
             console.log(result)}).catch((error)=>{
                 console.log(error)
             })

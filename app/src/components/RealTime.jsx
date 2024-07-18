@@ -1,5 +1,9 @@
+import { Link } from "react-router-dom";
 import "./RealTime.css";
+import Cookies from "universal-cookie"
 function RealTime(){
+    const cookie=new Cookies();
+    const token=cookie.get("TOKEN")
     return(
         <>
         <div className="realtime container-fluid">
@@ -43,9 +47,9 @@ function RealTime(){
                             <h1>Detailed Performance Reports</h1> 
                             <p>Gain access to in-depth reports that highlight student performance across various subjects and assessments. Understand individual progress and identify areas needing improvement.</p>
                         </div>
-                        <div className="Btn">
+                        <Link to={token?"/auth/input_form":"/register"} className="Btn">
                             <p>Get Started</p>
-                        </div>
+                        </Link>
                     </div>
                     <div className="performace col-md-6 col-sm-12">
                     <svg viewBox="0 0 748 552" fill="none" xmlns="http://www.w3.org/2000/svg" style={{width:"100%"}}>
@@ -407,16 +411,15 @@ function RealTime(){
                         You can also publish a note to the internet and share the URL with others.
                         </p>
                         </div>
-                        <div className="Btn d-flex flex-row justify-content-center align-items-center m-4">
+                        <Link to={token?"/auth/input_form":"/register"} className="Btn d-flex flex-row justify-content-center align-items-center m-4">
                             <p>Try it now</p>
                             <div className="icon">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 8.08984H15" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M8 1.08984L15 8.08984L8 15.0898" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </div>
