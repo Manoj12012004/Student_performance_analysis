@@ -10,6 +10,8 @@ import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
 
 function Login(){
+    const [err,setErr]=useState("")
+    const [wait,setWait]=useState(false)
     const nav = useNavigate();
     const cookies=new Cookies();
     const [loginUser,setloginUser]=useState({
@@ -31,12 +33,14 @@ function Login(){
     }
     const handleSubmit = async (e) =>{
         e.preventDefault();
+        setWait(true);
         await Axios(configuration).then((result)=>{
             cookies.set("TOKEN", result.data.token, {
                 path: "/",
               });
             nav("/auth");
             setLogin(true)
+            setErr(result.message)
             console.log(result)}).catch((error)=>{
                 console.log(error)
             })
@@ -77,7 +81,7 @@ function Login(){
                         {login ? (
                             <p className="text-success">You Are Logged in Successfully</p>
                             ) : (
-                            <p className="text-danger"></p>
+                            <p className="text-danger">{err === ""?"":err}</p>
                         )}
                         <div className="form-group">
                             <label htmlFor="email">Email<span className="star">*</span></label>
@@ -87,10 +91,10 @@ function Login(){
                             <label htmlFor="password">Password<span className="star">*</span></label>
                             <input type="password" className="form-control" id="password" placeholder="Enter password" name="password" value={loginUser.password}  onChange={handleChange}/>
                         </div>
-                        <button type="submit" className="btn btn-primary btn-block p-3 m-4" onClick={handleSubmit} style={{width:"60%"}} >Login</button>
+                        <button type="submit" className="btn btn-primary btn-block p-3 m-4" onClick={handleSubmit} style={{width:"60%"}}>{wait?"Please Wait":"Login"}</button>
                         <div className="text-center mt-3">
                             <p>Don't have an account yet? <Link to="/register">Sign up</Link></p>
-                            {/* <p>Forgot Password? <a href="#">Reset Now</a></p> */}
+                            {/* <p>Forgot Password? < href="#">Reset Now</></p> */}
                         </div>
                     </form>
                 </div>
