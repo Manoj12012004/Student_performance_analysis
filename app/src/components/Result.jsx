@@ -1,12 +1,4 @@
-// import React from "react";
-// import { Modal } from "../components/Modal";
-// import "./Result.css";
-// import CalendarBlank from '../CalendarBlank.svg';
-// import Envelope from '../Envelope.svg';
-// import CaretDown from '../CaretDown.svg';
-// import mdi from '../mdi.svg';
-// import Vector from '../Vector.svg';
-import React, { useState } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 function Result(props){

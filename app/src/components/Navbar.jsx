@@ -54,12 +54,15 @@ function Navbar1({props}){
                                 </Modal.Footer>
                             </Modal>
                             </div>
-                            </div>:<div className="Btn-Login btn m-2 " style={{width:"40%",height:"20%",margin:"auto"}}><div className="login "><Link to="/login" style={{textDecoration:"none",color:"blue",textAlign:"center"}}>Login</Link></div></div>}
-                            <div className="Btn-Free btn m-2 d-flex" style={{width:"auto",gap:"1.0rem"}}><p><Link to={link} style={{textDecoration:"none",color:"white"}}>Try this out for free</Link></p><div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </div>:<div className="Btn-Login btn m-2 " style={{width:"40%",height:"50%",margin:"auto"}}><div className="login "><Link to="/login" style={{textDecoration:"none",color:"blue",textAlign:"center"}}>Login</Link></div></div>}
+                            <div className="Btn-Free btn m-2 d-flex" style={{width:"auto",gap:"1.0rem"}}><Link to={link} style={{textDecoration:"none",color:"white"}}><p>{props === "register" ? "Try this out for free" : ""}</p>
+                            {props==="register" &&(
+                                <div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 8.08984H15" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M8 1.08984L15 8.08984L8 15.0898" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
+                            )}</Link>
                             </div>
                         </div>
                     </Nav>
