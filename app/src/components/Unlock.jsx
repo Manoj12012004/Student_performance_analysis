@@ -9,7 +9,7 @@ function Unlock() {
         <div className="left-section col-md-6 col-sm-12 d-flex flex-column align-items-center justify-content-center">
           <div className="heading d-flex flex-column justify-content-center w-100" style={{textAlign:"left"}}>
             <h1 className="unlock-insights">
-              Unlock Insights &amp; <br /> Drive Academic <br /> Success
+              Unlock Insights &amp; Drive Academic Success
             </h1>
           </div>
           <div className="text-block d-flex flex-column align-items-center">
