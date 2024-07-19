@@ -63,7 +63,7 @@ const handlePredictClick = async (e) => {
   const [resShow, setresShow] =useState(false);
   return (
     <div className="form-container container-fluid" >
-      <Container fluid className="input-form" style={{width:"70%"}}>
+      <Container fluid className="input-form" >
         <Row className='d-flex justify-content-center' style={{margin:"0"}}>
           <Col xs={12} md={10} lg={8} style={{padding:"0"}}>
             <Navbar bg="primary" variant="dark" expand="lg" className="nav-bar p-4" style={{borderRadius:"10px"}}>

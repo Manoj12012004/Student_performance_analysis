@@ -1,5 +1,8 @@
 @import url('./variables.css');
 
+.inputform{
+  width: 80vw;
+}
 .form-container {
   background-color: var(--secondary-color);
   padding: 40px; /* Adjust padding as needed */
@@ -81,4 +84,9 @@
   font-size: var(--font-size-medium);
   margin-top: 20px;
   color: var(--primary-color);
+}
+@media only screen and (max-width: 768px) {
+  .inputform{
+    width: 100vw;
+  }
 }
