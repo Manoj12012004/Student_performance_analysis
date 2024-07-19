@@ -36,7 +36,7 @@ return (
             variant="secondary"
             size="lg"
             className="custom-button-lg custom-button-generate"
-            onClick={()=>{props.onHide}}
+            onClick={props.onHide}
           >
             Generate again
           </Button>
