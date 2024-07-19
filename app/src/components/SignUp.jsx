@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
 import Axios from "axios";
 import image1 from "./Asessts/Login/image1.jpeg";
@@ -7,6 +7,7 @@ import image2 from "./Asessts/Login/image3.png";
 import image3 from "./Asessts/Login/image4.jpeg"
 
 function SignUp(){
+    const nav=useNavigate();
     const [passErr,setPassErr]=useState("")
     const [register, setRegister] = useState(false)
     const [user,setUser]=useState({
@@ -37,8 +38,11 @@ function SignUp(){
             setPassErr("Password is not valid");
             return;
         }
-        Axios(configuration).then((result)=>console.log(result)).catch((error)=>console.log(error))
-        setRegister(true)
+        Axios(configuration).then((result)=>{
+            nav("/login")
+            setRegister(true)
+            console.log(result)}).catch((error)=>console.log(error))
+        
     }
     return(
         <>
