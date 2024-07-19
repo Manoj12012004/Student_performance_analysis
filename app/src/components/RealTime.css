@@ -32,6 +32,7 @@
     background-color: #4F9CF9;
 }
 .realtime .block .content1 .headline .Btn p{
+    margin: auto;
     font-weight: 500;
     font-size: 1.5vw;
     line-height: 23px;
