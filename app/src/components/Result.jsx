@@ -1,7 +1,9 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { Button,Modal } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+
 function Result(props){
+  const nav= useNavigate();
 return (
   <Modal {...props}>
       <Modal.Body className="custom-modal-body">
@@ -21,7 +23,8 @@ return (
           <Button
             variant="primary"
             size="lg"
-            className="custom-button-lg custom-button-home"
+            className="custom-button-lg custom-button-home" 
+            onClick={()=>{nav("/auth")}}
           >
             HOME
           </Button>
@@ -29,6 +32,7 @@ return (
             variant="secondary"
             size="lg"
             className="custom-button-lg custom-button-generate"
+            onClick={()=>{nav("/auth/input_form")}}
           >
             Generate again
           </Button>

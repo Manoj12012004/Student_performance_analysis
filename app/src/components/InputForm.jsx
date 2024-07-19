@@ -85,9 +85,7 @@ const handlePredictClick = async (e) => {
           <Col xs={12} md={10} lg={8} className="register">
             <div className="title text-center">
               <h1 className="text-wrapper-4">Student Performance Analysis</h1>
-              <p className="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam duis vitae curabitur amet, fermentum lorem.
-              </p>
+              
             </div>
             <Form className="form" action='/predict' onSubmit={handlePredictClick} >
               <Row className="spaced">
@@ -181,7 +179,7 @@ const handlePredictClick = async (e) => {
               <Row className="spaced">
                 <Col sm={12}>
                   <Form.Group className="form-group-custom">
-                    <Form.Label>Field No 3 <span className="text-wrapper-5">*</span></Form.Label>
+                    {/* <Form.Label>Field No 3 <span className="text-wrapper-5">*</span></Form.Label> */}
                     <Form.Control as="select" required name='lunch' value={Input_form.lunch} onChange={handleChange}>
                     <option value={""}>Select Lunch Type</option>
                     <option value={"standard"}>Standard</option>
