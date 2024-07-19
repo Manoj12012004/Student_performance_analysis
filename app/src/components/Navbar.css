@@ -3,44 +3,51 @@
     padding: 2%;
 }
 .Name{
-    font-size: 150%;
+    font-size: 2vw;
     font-weight: 700;
     text-align: left;
     color: #FFFF;
 }
 .Btn-Login{
-    width: 10%;
+    width: 2vw;
     background: #FFE492;
     border-radius: 2rem;
 }
 .Btn-Login .login{
-    width: 10%;
     font-weight: 500;
-    font-size: 140%;
-
+    font-size: 1.5vw;
     color: #043873;
+    margin: auto;  
+}
+.Btn-Login .login a{
+    margin: auto;
+    text-decoration: none;
+}
+.Btn-Login:hover a{
+    color: white;
 }
 .Btn-Free{
-    width: 10%;
+    width: 5vw;
     background: #4F9CF9;
     border-radius: 2rem;
 }
 .Btn-Free p{
     font-weight: 500;
-    font-size: 150%;
+    font-size: 1.2vw;
     letter-spacing: -0.02em;
     color: #FFFFFF;
     margin: 0;
 }
-.Btn-Free svg{
-    left: 50%;
+
+#nav .About{
+    margin: auto;
+    color: white;
 }
-
-
-
-
-
-
-
-
-
+#nav .History{
+    margin: auto;
+    color: white;
+}
+#nav .Test{
+    margin: auto;
+    color: white;
+}

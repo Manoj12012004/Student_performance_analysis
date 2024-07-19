@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { Container, Modal } from "react-bootstrap";
 import { useState } from "react";
@@ -9,12 +9,11 @@ const cookies = new Cookies();
 
 
 function Navbar1({props}){
-    const nav=useNavigate();
     const link=`${props}`
     const token=cookies.get("TOKEN")
     const logout=()=>{
         cookies.remove("TOKEN");
-        nav("/login");
+        window.location.href = "/login";
     }
     const [show,setShow]=useState(false)
     const handleClose = () => setShow(false);
@@ -29,10 +28,10 @@ function Navbar1({props}){
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto d-flex justify-content-between" style={{margin:"auto",}} >
-                        <Nav.Link className="About" style={{fontSize:"100%",color:"white",margin:"auto"}}>About Analysis</Nav.Link>
-                        <Nav.Link className="Test" style={{fontSize:"100%",color:"white",margin:"auto"}}>Test Your Score</Nav.Link>
-                        <Nav.Link className="History" style={{fontSize:"100%",color:"white",margin:"auto"}}>History</Nav.Link>
-                        <div className="Btns d-flex justify-content-center">
+                        <Nav.Link className="About" >About Analysis</Nav.Link>
+                        <Nav.Link className="Test" >Test Your Score</Nav.Link>
+                        <Nav.Link className="History" >History</Nav.Link>
+                        <div className="Btns d-flex justify-content-center align-items-center">
                             {token?<div className="logout d-flex justify-content-center align-items-center" >
                             <button onClick={handleShow} style={{border:"none",margin:"auto"}}>
                             <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{backgroundColor:"#043873"}}>
@@ -54,15 +53,13 @@ function Navbar1({props}){
                                 </Modal.Footer>
                             </Modal>
                             </div>
-                            </div>:<Link to="/login" className="Btn-Login btn m-2 " style={{width:"40%",height:"50%",margin:"auto"}}><div className="login "><p style={{textDecoration:"none",color:"blue",textAlign:"center"}}>Login</p></div></Link>}
-                            {props==="register"?
-                            <Link to={link} className="Btn-Free btn m-2 d-flex" style={{width:"auto",gap:"1.0rem"}}><p style={{textDecoration:"none",color:"white"}}><p>Try this out for free</p>
-                                <div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </div>:<div className="Btn-Login btn m-2 " style={{width:"40%",height:"50%",margin:"auto"}}><div className="login"><Link to="/login">Login</Link></div></div>}
+                            <div className="Btn-Free btn m-2 d-flex" style={{width:"auto",gap:"1.0rem",marginTop:"auto",marginBottom:"auto"}}><p><Link to={link} style={{textDecoration:"none",color:"white"}}>Try this out for free</Link></p><div style={{marginTop:"auto",marginBottom:"auto"}}><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{width:"1.5vw"}}>
                                 <path d="M1 8.08984H15" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M8 1.08984L15 8.08984L8 15.0898" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                            </div></p>
-                            </Link>:""}
+                            </div>
+                            </div>
                         </div>
                     </Nav>
                 </Navbar.Collapse>

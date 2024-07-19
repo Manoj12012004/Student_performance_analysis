@@ -20,7 +20,7 @@ function Footer(){
         </div>
         <div className="btn-try d-flex align-items-center justify-content-center">
           <button onClick={()=>{token?nav("/auth/input_form"):nav("/register")}} style={{backgroundColor:"#4f9cf9",border:"none"}}>
-          <div className="try-it-free">Try it&nbsp;&nbsp;free</div>
+          <div className="try-it-free">Try it&nbsp;free</div>
           <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.5 7.5H14.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M7.5 0.5L14.5 7.5L7.5 14.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>

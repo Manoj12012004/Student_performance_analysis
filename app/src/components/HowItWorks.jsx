@@ -6,7 +6,7 @@ function HowItWorks(){
   return (
     <div className="how-it-works container-fluid d-flex justify-content-center p-5">
       <div className="block d-flex justify-content-between align-items-center row">
-        <img className="image-container col-md-6 col-sm-12" alt="" src={imagecontainer} />
+        <img className="image-container col-md-6 col-sm-12" alt="" src={imagecontainer} style={{width:"80%",margin:"auto"}}/>
         <div className="content d-flex flex-column col-md-6 col-sm-12">
           <h1 className="heading">How It Works</h1>
           <div className="description">
