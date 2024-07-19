@@ -42,9 +42,9 @@ function SignUp(){
     }
     return(
         <>
-        <div className="signup container-fluid">
+        <div className="signup container">
         <div className="row no-gutters">
-            <div className="col-md-6 bg-primary text-white p-5 d-flex flex-column justify-content-center">
+            <div className="col-md-6 col-sm-12 bg-primary text-white p-5 d-flex flex-column justify-content-center">
                 <div className="text-center">
                     <h2 className=" bg-white text-dark rounded-pill heading">Student Performnace Analaysis</h2>
                     <h4 className="subheading">Welcome to Student Performance Analaysis</h4>
@@ -64,7 +64,7 @@ function SignUp(){
                     </div>
                 </div>
             </div>
-            <div className="col-md-6 p-5 d-flex align-items-center">
+            <div className="col-md-6 col-sm-12 p-5 d-flex align-items-center">
                 <div className="w-100">
                     <div className="text-center mb-4">
                         <h4>Sign up with Us</h4>
@@ -87,8 +87,8 @@ function SignUp(){
                         <div className="form-group">
                             <label  htmlFor="phoneNumber">Phone Number<span className="star">*</span></label>
                             <div className="input-group">
-                                <div className="input-group-prepend">
-                                    <select className="custom-select">
+                                <div className="input-group-prepend" >
+                                    <select className="custom-select" style={{height:"100%",backgroundColor:"white",border:"0",borderRadius:"16px"}}>
                                         <option value="+91">+91</option>
                                         <option value="+1">+1</option>
                                     </select>
