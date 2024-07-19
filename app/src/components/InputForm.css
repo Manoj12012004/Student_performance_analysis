@@ -1,11 +1,11 @@
 @import url('./variables.css');
 
 .inputform{
-  width: 80vw;
+  width: 100vw;
 }
 .form-container {
   background-color: var(--secondary-color);
-  padding: 40px; /* Adjust padding as needed */
+  padding: 1vw; /* Adjust padding as needed */
 }
 
 .register {
