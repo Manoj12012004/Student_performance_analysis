@@ -41,6 +41,7 @@ function Login(){
             nav("/auth");
             setLogin(true)
             setErr(result.data.message)
+            console.log(err)
             console.log(result)}).catch((error)=>{
                 console.log(error)
             })
