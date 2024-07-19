@@ -53,8 +53,8 @@ function Login(){
             <div className="col-md-6 col-sm-12 conatainer text-white bg-primary ">
                 <div className="container d-flex flex-column justify-content-between" id="rightCol">
                     <div className="heading container d-flex flex-column justify-content-between">
-                        <h2 className=" bg-white rounded-pill p-1" style={{color:"#043873",fontSize:"1.8rem"}}>Student Performnace Analaysis</h2>
-                        <div><h4 className="subheading" style={{fontSize:"2rem",textAlign:"left",lineHeight:"2.5rem",marginTop:"2rem"}}>Welcome to Student Performance Analaysis</h4>
+                        <h2 className=" bg-white rounded-pill p-1" style={{color:"#043873",fontSize:"2vw"}}>Student Performnace Analaysis</h2>
+                        <div><h4 className="subheading" style={{fontSize:"3vw",textAlign:"left",lineHeight:"3vw",marginTop:"3vw"}}>Welcome to Student Performance Analaysis</h4>
                         <p className="para">We understand the value of Student Performance in shaping for success.</p>
                         </div>  
                     </div>

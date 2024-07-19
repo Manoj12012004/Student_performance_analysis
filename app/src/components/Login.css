@@ -6,8 +6,6 @@
     justify-content: center;
 }
 .Login .row{
-    min-width: 80rem;
-    max-height: 80rem;
     margin: auto
 }
 
