@@ -5,7 +5,7 @@ import loginImg3 from "./Asessts/Login/image3.png";
 import loginImg1 from "./Asessts/Login/image1.jpeg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import  Axios  from "axios";
+import  Axios, { AxiosError }  from "axios";
 import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
 
