@@ -56,7 +56,7 @@ app.post("/register", async (request, response) => {
     });
   } catch (error) {
     response.status(500).send({
-      message: "Error creating user",
+      message: "EmailID already exists",
       error,
     });
   }
