@@ -28,7 +28,7 @@ return (
             variant="primary"
             size="lg"
             className="custom-button-lg custom-button-home" 
-            onClick={closeButton}
+            onClick={()=>{nav("/auth")}}
           >
             HOME
           </Button>
@@ -36,7 +36,7 @@ return (
             variant="secondary"
             size="lg"
             className="custom-button-lg custom-button-generate"
-            onClick={()=>{nav("/auth/input_form")}}
+            onClick={()=>{props.onHide}}
           >
             Generate again
           </Button>

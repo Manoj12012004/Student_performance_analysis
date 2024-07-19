@@ -7,6 +7,7 @@ import image2 from "./Asessts/Login/image3.png";
 import image3 from "./Asessts/Login/image4.jpeg"
 
 function SignUp(){
+    const [passErr,setPassErr]=useState("")
     const [register, setRegister] = useState(false)
     const [user,setUser]=useState({
         name:"",
@@ -31,6 +32,11 @@ function SignUp(){
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
+        const passwordPattern = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+        if (!passwordPattern.test(password)) {
+            setPassErr("Password is not valid");
+            return;
+        }
         Axios(configuration).then((result)=>console.log(result)).catch((error)=>console.log(error))
         setRegister(true)
     }
@@ -100,6 +106,9 @@ function SignUp(){
                                     <span> <p> <i className='bx bxs-check-circle'></i> 8 characters minimum</p></span>
                                     <span> <p><i className='bx bxs-check-circle'></i>  One number</p></span>
                                     <span> <p> <i className='bx bxs-check-circle'></i> One special character</p></span>
+                                </div>
+                                <div className="passError text-danger">
+                                    {passErr===""?"":passErr}
                                 </div>
                             </small>
                         </div>
