@@ -33,7 +33,7 @@ function SignUp(){
     const handleSubmit=(e)=>{
         e.preventDefault();
         const passwordPattern = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
-        if (!passwordPattern.test(password)) {
+        if (!passwordPattern.test(user.password)) {
             setPassErr("Password is not valid");
             return;
         }
