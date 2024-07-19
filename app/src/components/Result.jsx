@@ -20,7 +20,7 @@ return (
           Successfully accepted!
         </div>
         <div className='botmari'>
-          Result : {props.res}
+          {props.res}
         </div>
      
         <div className="d-grid gap-2">
