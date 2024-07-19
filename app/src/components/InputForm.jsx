@@ -48,7 +48,6 @@ const handlePredictClick = async (e) => {
       });
       const data = await response.json();
       if (response.ok) {
-        console.log()
         setResult(`Predicted Score: ${data.prediction}`);
         setshowR(true);
         setresShow(true)

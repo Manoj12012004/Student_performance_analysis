@@ -1,8 +1,6 @@
 @import url('./variables.css');
 
 .form-container {
-  width: 1440px;
-  height: 1956px;
   background-color: var(--secondary-color);
   padding: 40px; /* Adjust padding as needed */
 }
