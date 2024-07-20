@@ -80,7 +80,9 @@ h4{
     margin-bottom: 2px;
    
 }
-
+.password-criteria span p{
+    text-align: left;
+}
 h2{
     margin-top: 0px;
     padding-top: 0px;
