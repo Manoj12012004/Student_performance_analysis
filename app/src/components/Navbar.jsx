@@ -24,7 +24,7 @@ function Navbar1({props}){
         <Navbar expand="lg"  id="nav">
             <Container className="block d-flex justify-content-between align-items-center" >
                 <Navbar.Brand className="Logo d-flex justify-content-center align-items-center">
-                    <div className="Name " style={{fontSize:"2vw"}}>Student Performance Analysis</div>
+                    <div className="Name " >Student Performance Analysis</div>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -55,12 +55,12 @@ function Navbar1({props}){
                             </Modal>
                             </div>
                             </div>:<div className="Btn-Login btn m-2 " style={{width:"40%",height:"50%",margin:"auto"}}><div className="login"><Link to="/login">Login</Link></div></div>}
-                            <div className="Btn-Free btn m-2 d-flex" style={{width:"auto",gap:"1.0rem",marginTop:"auto",marginBottom:"auto"}}><p style={{margin:"auto"}}><Link to={link} style={{textDecoration:"none",color:"white"}}>Try this out for free</Link></p><div className="d-flex align-items-center"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{width:"1.5vw"}}>
+                            {link==="register" &&
+                            <div className="Btn-Free btn m-2 d-flex" style={{gap:"1.0rem",marginTop:"auto",marginBottom:"auto"}}><p style={{margin:"auto"}}><Link to={link} style={{textDecoration:"none",color:"white"}}>Try this out for free</Link></p><div className="d-flex align-items-center"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{width:"1.5vw"}}>
                                 <path d="M1 8.08984H15" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M8 1.08984L15 8.08984L8 15.0898" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            </div>
+                                </svg></div>
+                            </div> }  
                         </div>
                     </Nav>
                 </Navbar.Collapse>
