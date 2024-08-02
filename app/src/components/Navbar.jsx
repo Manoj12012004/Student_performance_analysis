@@ -16,16 +16,16 @@ function Navbar1({props}){
     const logout=()=>{
         cookies.remove("TOKEN");
         nav("/login");
-        localStorage.clear();
+        // localStorage.clear();
     }
     const [show,setShow]=useState(false)
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const user=localStorage.getItem('user');
-    let storedUser=null
-    if (user){
-        storedUser=JSON.parse(user)
-    }
+    // const user=localStorage.getItem('user');
+    // let storedUser=null
+    // if (user){
+    //     storedUser=JSON.parse(user)
+    // }
     return(
         <>
         <Navbar expand="lg"  id="nav">

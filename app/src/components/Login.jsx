@@ -41,7 +41,7 @@ function Login(){
             nav("/auth");
             setLogin(true);
             setWait(false);
-            localStorage.setItem('user',JSON.stringify(result.data))
+            // localStorage.setItem('user',JSON.stringify(result.data))
         }).catch((error)=>{
                 if (error && error instanceof AxiosError){
                     setErr(error.response?.data.message)
