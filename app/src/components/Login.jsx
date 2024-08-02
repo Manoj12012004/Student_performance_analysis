@@ -39,8 +39,10 @@ function Login(){
                 path: "/",
               });
             nav("/auth");
-            setLogin(true)
-            setWait(false)}).catch((error)=>{
+            setLogin(true);
+            setWait(false);
+            localStorage.setItem('user',result.data)
+        }).catch((error)=>{
                 if (error && error instanceof AxiosError){
                     setErr(error.response?.data.message)
                     setWait(false)

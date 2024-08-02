@@ -5,6 +5,7 @@ import { Container, Modal } from "react-bootstrap";
 import { useState } from "react";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
+import HowItWorks from "./HowItWorks";
 const cookies = new Cookies();
 
 
@@ -15,10 +16,12 @@ function Navbar1({props}){
     const logout=()=>{
         cookies.remove("TOKEN");
         nav("/login");
+        localStorage.clear();
     }
     const [show,setShow]=useState(false)
     const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+    const handleShow = () => setShow(true);
+    const user=localStorage.getItem('user');
     return(
         <>
         <Navbar expand="lg"  id="nav">
@@ -29,7 +32,7 @@ function Navbar1({props}){
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto d-flex justify-content-between" style={{margin:"auto",}} >
-                        <Nav.Link className="About" >About Analysis</Nav.Link>
+                        <Nav.Link className="About" ><Link to={HowItWorks}></Link>About Analysis</Nav.Link>
                         <Nav.Link className="Test" ><Link to={link} style={{textDecoration:"none"}}>Test Your Score</Link></Nav.Link>
                         <Nav.Link className="History" >History</Nav.Link>
                         <div className="Btns d-flex justify-content-center align-items-center">
@@ -43,10 +46,10 @@ function Navbar1({props}){
                             <div className="modal fade" tabindex="-1" role="dialog" id="Modal" aria-labelledby="ModalLabel" aria-hidden="true">
                             <Modal show={show} onHide={handleClose}>
                                 <Modal.Header closeButton>
-                                    <Modal.Title id="ModalLabel">Modal title</Modal.Title>
+                                    <Modal.Title id="ModalLabel">My Profile</Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body class="modal-body">
-                                    <p>Hello User</p>
+                                    <p>Hello {user}</p>
                                 </Modal.Body>
                                 <Modal.Footer>
                                     <button type="button" class="btn btn-primary" onClick={handleClose}>Close</button>
