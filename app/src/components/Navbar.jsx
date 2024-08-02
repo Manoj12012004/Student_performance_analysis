@@ -22,6 +22,10 @@ function Navbar1({props}){
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const user=localStorage.getItem('user');
+    let storedUser=null
+    if (user){
+        storedUser=JSON.parse(user)
+    }
     return(
         <>
         <Navbar expand="lg"  id="nav">
@@ -32,7 +36,7 @@ function Navbar1({props}){
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto d-flex justify-content-between" style={{margin:"auto",}} >
-                        <Nav.Link className="About" ><Link to={HowItWorks}></Link>About Analysis</Nav.Link>
+                        <Nav.Link className="About" ><Link to={HowItWorks}>About Analysis</Link></Nav.Link>
                         <Nav.Link className="Test" ><Link to={link} style={{textDecoration:"none"}}>Test Your Score</Link></Nav.Link>
                         <Nav.Link className="History" >History</Nav.Link>
                         <div className="Btns d-flex justify-content-center align-items-center">
