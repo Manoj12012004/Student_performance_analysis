@@ -53,7 +53,7 @@ function Navbar1({props}){
                                     <Modal.Title id="ModalLabel">My Profile</Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body class="modal-body">
-                                    <p>Hello {user}</p>
+                                    <p>Hello </p>
                                 </Modal.Body>
                                 <Modal.Footer>
                                     <button type="button" class="btn btn-primary" onClick={handleClose}>Close</button>
