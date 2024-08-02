@@ -36,7 +36,7 @@ function Navbar1({props}){
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto d-flex justify-content-between" style={{margin:"auto",}} >
-                        <Nav.Link className="About" ><Link to={}>About Analysis</Link></Nav.Link>
+                        <Nav.Link className="About" ><Link>About Analysis</Link></Nav.Link>
                         <Nav.Link className="Test" ><Link to={link} style={{textDecoration:"none"}}>Test Your Score</Link></Nav.Link>
                         <Nav.Link className="History" >History</Nav.Link>
                         <div className="Btns d-flex justify-content-center align-items-center">
