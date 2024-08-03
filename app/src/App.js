@@ -21,7 +21,6 @@ function App() {
         <Route path='/' element={<Home/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/register' element={<SignUp/>}></Route>
-        {/* <ProtectedRoutes path='/auth' element={<AuthComponent/>}></ProtectedRoutes> */}
         <Route element={<ProtectedRoutes />}>
           <Route path="/auth" element={<AuthComponent />} />
         </Route>

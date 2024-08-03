@@ -7,6 +7,7 @@ import jwt from "jsonwebtoken";
 import auth from './auth.js';
 import dotenv from "dotenv";
 import { spawn } from 'child_process';
+import path from "path";
 
 dotenv.config(); // Load environment variables at the beginning
 
@@ -18,6 +19,12 @@ childPython.on('close', (code) => {
 });
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 const allowedOrigins = [
   'https://student-performance-analysis-front.onrender.com',
