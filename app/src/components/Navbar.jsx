@@ -16,16 +16,10 @@ function Navbar1({props}){
     const logout=()=>{
         cookies.remove("TOKEN");
         nav("/login");
-        // localStorage.clear();
     }
     const [show,setShow]=useState(false)
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    // const user=localStorage.getItem('user');
-    // let storedUser=null
-    // if (user){
-    //     storedUser=JSON.parse(user)
-    // }
     return(
         <>
         <Navbar expand="lg"  id="nav">
@@ -53,7 +47,7 @@ function Navbar1({props}){
                                     <Modal.Title id="ModalLabel">My Profile</Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body class="modal-body">
-                                    <p>Hello </p>
+                                    <p>Are you sure you want to logout? Click Logout</p>
                                 </Modal.Body>
                                 <Modal.Footer>
                                     <button type="button" class="btn btn-primary" onClick={handleClose}>Close</button>

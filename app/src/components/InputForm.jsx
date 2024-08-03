@@ -145,23 +145,7 @@ const handlePredictClick = async (e) => {
               <Row className="spaced">
                 <Col sm={12}>
                   <Form.Group className="form-group-custom">
-                    <Form.Label>Field No 1 <span className="text-wrapper-5">*</span></Form.Label>
-                    <Form.Control as="select" required name='race_ethnicity' value={Input_form.race_ethnicity} onChange={handleChange}>
-                      <option>Select Race/Ethnicity</option>
-                      <option value={"group A"}>Group A</option>
-                      <option value={"group B"}>Group B</option>
-                      <option value={"group C"}>Group C</option>
-                      <option value={"group D"}>Group D</option>
-                      <option value={"group E"}>Group E</option>
-                    </Form.Control>
-                  </Form.Group>
-                </Col>
-              </Row>
-
-              <Row className="spaced">
-                <Col sm={12}>
-                  <Form.Group className="form-group-custom">
-                    <Form.Label style={{}}>Field No 2 <span className="text-wrapper-5">*</span></Form.Label>
+                    <Form.Label style={{}}><span className="text-wrapper-5">*</span></Form.Label>
                     <Form.Control as="select" required name='parental_level_of_education' value={Input_form.parental_level_of_education} onChange={handleChange}>
                     <option value={""}>Select Parental Level of Education</option>
                     <option value={"some high school"}>Some High School</option>
@@ -174,24 +158,10 @@ const handlePredictClick = async (e) => {
                   </Form.Group>
                 </Col>
               </Row>
-
               <Row className="spaced">
                 <Col sm={12}>
                   <Form.Group className="form-group-custom">
-                    {/* <Form.Label>Field No 3 <span className="text-wrapper-5">*</span></Form.Label> */}
-                    <Form.Control as="select" required name='lunch' value={Input_form.lunch} onChange={handleChange}>
-                    <option value={""}>Select Lunch Type</option>
-                    <option value={"standard"}>Standard</option>
-                    <option value={"free/reduced"}>Free/Reduced</option>
-                    </Form.Control>
-                  </Form.Group>
-                </Col>
-              </Row>
-
-              <Row className="spaced">
-                <Col sm={12}>
-                  <Form.Group className="form-group-custom">
-                    <Form.Label>Field No 4 <span className="text-wrapper-5">*</span></Form.Label>
+                    <Form.Label><span className="text-wrapper-5">*</span></Form.Label>
                     <Form.Control as="select" required name='test_preparation_course' value={Input_form.test_preparation_course} onChange={handleChange}>
                     <option value={""}>Select Test Preparation Course</option>
                     <option value={"none"}>None</option>
@@ -204,7 +174,7 @@ const handlePredictClick = async (e) => {
               <Row className="spaced">
                 <Col sm={12}>
                   <Form.Group className="form-group-custom">
-                    <Form.Label>Field No 5 <span className="text-wrapper-5">*</span></Form.Label>
+                    <Form.Label><span className="text-wrapper-5">*</span></Form.Label>
                     
                   </Form.Group>
                 </Col>
@@ -216,7 +186,7 @@ const handlePredictClick = async (e) => {
                 </Col>
                 <Col sm={6}>
                   <Form.Group className="form-group-custom">
-                    <Form.Label>Reading Score <span className="text-wrapper-5">*</span></Form.Label>           
+                    <Form.Label><span className="text-wrapper-5">*</span></Form.Label>           
                     <Form.Control type="number" placeholder="Reading Score" required name='reading_score' value={Input_form.reading_score} onChange={handleChangeInt}/>
                   </Form.Group>
                 </Col>
